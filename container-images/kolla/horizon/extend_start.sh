@@ -97,10 +97,10 @@ function config_watcher_dashboard {
 
 function config_cloudkitty_dashboard {
     # Do nothing if the cloudkitty-dashboard is not installed
-    if [ -d ${SITE_PACKAGES}/cloudkitty_dashboard ] ; then
-        for file in ${SITE_PACKAGES}/cloudkittydashboard/local/enabled/_*[^__].py; do
+    if [ -d ${SITE_PACKAGES}/cloudkittydashboard ] ; then
+        for file in ${SITE_PACKAGES}/cloudkittydashboard/enabled/_*[^__].py; do
             config_dashboard "${ENABLE_CLOUDKITTY}" \
-                "${SITE_PACKAGES}/cloudkittydashboard/local/enabled/${file##*/}" \
+                "${SITE_PACKAGES}/cloudkittydashboard/enabled/${file##*/}" \
                 "${SITE_PACKAGES}/openstack_dashboard/local/enabled/${file##*/}"
         done
     fi
